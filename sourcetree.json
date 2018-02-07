@@ -1,13 +1,25 @@
 {
     "homepage": "https://www.sourcetreeapp.com/",
-    "version": "1.7.0.32509",
-    "url":"https://downloads.atlassian.com/software/sourcetree/windows/SourceTreeSetup_1.7.0.32509.exe",
-    "hash":"43fed24136c83d1d0fee64a7c44949cc76a8b749cd44a2ff04691c4418869c68",
-    "installer": {
-        "args": ["APPDIR=\"$dir\"","/qb"]
+    "version": "2.4.8",
+    "url": "https://www.sourcetreeapp.com/update/windows/ga/SourceTree-2.4.8-full.nupkg#/dl.7z",
+    "hash": "sha1:C65B39A313512F9FB9A7640F914E17B0A9E13A72",
+    "bin": "lib\\net45\\sourcetree.exe",
+    "shortcuts": [
+        [
+            "lib\\net45\\sourcetree.exe",
+            "Atlassian SourceTree"
+        ]
+    ],
+    "checkver": {
+        "url": "https://www.sourcetreeapp.com/update/windows/ga/RELEASES?id=SourceTree&localVersion=0&arch=amd64",
+        "re": "SourceTree-([\\d.]+)-full.nupkg",
+        "reverse": true
     },
-    "bin": [
-        [ "sourcetree.exe", "sourcetree" ],
-        [ "stree_gri.exe", "stree_gri" ]
-    ]
+    "post_install": "New-Item -ItemType file -Path \"$dir\\lib\\Update.exe\" -force | out-null",
+    "autoupdate": {
+        "url": "https://www.sourcetreeapp.com/update/windows/ga/SourceTree-$version-full.nupkg#/dl.7z",
+        "hash": {
+            "url": "$baseurl/RELEASES"
+        }
+    }
 }

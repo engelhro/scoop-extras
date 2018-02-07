@@ -1,0 +1,29 @@
+{
+    "homepage": "https://sourceforge.net/projects/jpegview/",
+    "version": "1.0.36",
+    "license": "GPLv2",
+    "url": "https://sourceforge.net/projects/jpegview/files/jpegview/1.0.36/JPEGView_1.0.36.zip",
+    "hash": "sha1:951d72c24b795119e1f66a7aa50ea6aec344bb71",
+    "architecture": {
+        "64bit": {
+            "extract_dir": "JPEGView64"
+        },
+        "32bit": {
+            "extract_dir": "JPEGView32"
+        }
+    },
+    "bin": "JPEGView.exe",
+    "shortcuts": [
+        [
+            "JPEGView.exe",
+            "JPEGView"
+        ]
+    ],
+    "checkver": {
+        "url": "https://sourceforge.net/projects/jpegview/files/",
+        "re": "title=\"/jpegview/([\\d.]+)/JPEGView_"
+    },
+    "autoupdate": {
+        "url": "https://sourceforge.net/projects/jpegview/files/jpegview/$version/JPEGView_$version.zip"
+    }
+}

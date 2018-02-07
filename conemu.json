@@ -1,11 +1,27 @@
 {
-    "homepage": "http://conemu.github.io/",
-    "version": "150408",
+    "homepage": "https://conemu.github.io/",
+    "version": "18.02.06",
     "license": "BSD 3-clause",
-    "url": "http://sourceforge.net/projects/conemu/files/Alpha/ConEmuPack.150408.7z",
-    "hash": "3af90e99e02118b03412170ec9b155c1574647e80343b135c5568851c55f19d7",
+    "url": "https://github.com/Maximus5/ConEmu/releases/download/v18.02.06/ConEmuPack.180206.7z",
+    "hash": "0915c71d6b260886ebb14afb9a30341f25effc9f24f7e80ad6327a919be3920a",
     "bin": [
         "ConEmu.exe",
         "ConEmu64.exe"
-    ]
+    ],
+    "shortcuts": [
+        [
+            "ConEmu64.exe",
+            "ConEmu (x64)"
+        ],
+        [
+            "ConEmu.exe",
+            "ConEmu (x86)"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/Maximus5/ConEmu"
+    },
+    "autoupdate": {
+        "url": "https://github.com/Maximus5/ConEmu/releases/download/v$version/ConEmuPack.$cleanVersion.7z"
+    }
 }

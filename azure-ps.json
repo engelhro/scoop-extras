@@ -1,0 +1,19 @@
+{
+    "description": "Microsoft Azure PowerShell",
+    "homepage": "https://aka.ms/azpsdocs",
+    "version": "5.2.0",
+    "license": "https://raw.githubusercontent.com/Azure/azure-powershell/master/LICENSE.txt",
+    "url": "https://github.com/Azure/azure-powershell/releases/download/v5.2.0-January2018/azure-powershell.5.2.0.msi",
+    "hash": "8cf04cc792b359917256401ad16daddf75e6097410ca84e990cf9fe117e8f6aa",
+    "extract_dir": "Microsoft SDKs",
+    "psmodule": {
+        "name": "AzureRM"
+    },
+    "checkver": {
+        "url": "https://github.com/Azure/azure-powershell/releases/latest",
+        "re": "/Azure/azure-powershell/releases/download/v(?<release>[\\d.]+-[\\w\\d]+)/azure-powershell.([\\d.]+).msi\">link"
+    },
+    "autoupdate": {
+        "url": "https://github.com/Azure/azure-powershell/releases/download/v$matchRelease/azure-powershell.$version.msi"
+    }
+}

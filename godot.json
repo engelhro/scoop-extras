@@ -1,0 +1,39 @@
+{
+    "homepage": "https://godotengine.org/",
+    "license": "MIT",
+    "version": "3.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://downloads.tuxfamily.org/godotengine/3.0/Godot_v3.0-stable_win64.exe.zip",
+            "hash": "1776e3acb9f1009d250992c876923bc9a3470ac02bc363409d0f365bbd4917c1"
+        },
+        "32bit": {
+            "url": "https://downloads.tuxfamily.org/godotengine/3.0/Godot_v3.0-stable_win32.exe.zip",
+            "hash": "59fc6ea354a13ebd14f9d8a219c2e33053bbc6164515d909ab19544ee02c3e99"
+        }
+    },
+    "pre_install": "Get-ChildItem \"$dir\\Godot_*.exe\" | Rename-Item -NewName \"$dir\\godot.exe\"",
+    "bin": [
+        "godot.exe"
+    ],
+    "shortcuts": [
+        [
+            "godot.exe",
+            "Godot"
+        ]
+    ],
+    "checkver": {
+        "url": "https://godotengine.org/download",
+        "re": "<h2>Godot <em>([\\d.]+)</em></h2>"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://downloads.tuxfamily.org/godotengine/$version/Godot_v$version-stable_win64.exe.zip"
+            },
+            "32bit": {
+                "url": "https://downloads.tuxfamily.org/godotengine/$version/Godot_v$version-stable_win32.exe.zip"
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "version": "2.6.4.1702",
+    "license": "Commercial",
+    "url": "http://app.pc.kakao.com/talk/win32/KakaoTalk_Setup.exe#/dl.7z",
+    "homepage": "https://www.kakao.com/talk",
+    "hash": "05adb185ecec683152d6667a814a811a0f28967460f24edd84fe6cc6f0ae8189",
+    "shortcuts": [
+        [
+            "KakaoTalk.exe",
+            "KakaoTalk"
+        ]
+    ],
+    "checkver": {
+        "url": "http://app.pc.kakao.com/talk/win32/patch/patch.txt",
+        "re": "new\\s+([\\d.]+)\\s+"
+    },
+    "autoupdate": {
+        "url": "http://app.pc.kakao.com/talk/win32/KakaoTalk_Setup.exe#/dl.7z"
+    }
+}

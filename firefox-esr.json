@@ -1,0 +1,58 @@
+{
+    "homepage": "https://www.mozilla.org/en-US/firefox/organizations/",
+    "version": "52.6.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://download.mozilla.org/?product=firefox-52.6.0esr-SSL&os=win64&lang=en-US#/firefox-setup.exe",
+            "hash": "ba2e63094eee1bbb34b36488bdf3a3912be9de7b0b3683587bc75910feba4c0a"
+        },
+        "32bit": {
+            "url": "https://download.mozilla.org/?product=firefox-52.6.0esr-SSL&os=win&lang=en-US#/firefox-setup.exe",
+            "hash": "a33f809879e324f05ba2827f980c522e49d99618332dc1aaa28e4e9390cede14"
+        }
+    },
+    "bin": [
+        "firefox.exe",
+        [
+            "firefox.exe",
+            "firefox-esr"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "firefox.exe",
+            "Mozilla Firefox"
+        ]
+    ],
+    "pre_install": "echo \"[Install]`nInstallDirectoryPath=$dir\" | sc \"$dir\\install.ini\"",
+    "installer": {
+        "file": "firefox-setup.exe",
+        "args": "/INI=$dir\\install.ini"
+    },
+    "uninstaller": {
+        "file": "uninstall\\helper.exe",
+        "args": "/S"
+    },
+    "checkver": {
+        "url": "https://www.mozilla.org/en-US/firefox/organizations/all/",
+        "re": "data-esr-versions=\"([\\d.]+)\""
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://download.mozilla.org/?product=firefox-$versionesr-SSL&os=win64&lang=en-US#/firefox-setup.exe",
+                "hash": {
+                    "find": "([a-fA-F0-9]{64})\\s+(?:win64/en-US/Firefox Setup ([\\d.]+)esr.exe)",
+                    "url": "https://download-installer.cdn.mozilla.net/pub/firefox/releases/$versionesr/SHA256SUMS"
+                }
+            },
+            "32bit": {
+                "url": "https://download.mozilla.org/?product=firefox-$versionesr-SSL&os=win&lang=en-US#/firefox-setup.exe",
+                "hash": {
+                    "find": "([a-fA-F0-9]{64})\\s+(?:win32/en-US/Firefox Setup ([\\d.]+)esr.exe)",
+                    "url": "https://download-installer.cdn.mozilla.net/pub/firefox/releases/$versionesr/SHA256SUMS"
+                }
+            }
+        }
+    }
+}

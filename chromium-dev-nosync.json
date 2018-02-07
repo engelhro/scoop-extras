@@ -1,0 +1,37 @@
+{
+    "version": "66.0.3326.0-r530613",
+    "license": "https://chromium.googlesource.com/chromium/src/+/master/LICENSE",
+    "homepage": "https://www.chromium.org",
+    "checkver": {
+        "url": "https://chromium.woolyss.com/api/v3/?os=windows&bit=64&type=dev-codecs-nosync&out=string",
+        "re": "v([\\d.]+-r(?:\\d+))-win64"
+    },
+    "bin": "chrome.exe",
+    "extract_dir": "chrome-win32",
+    "shortcuts": [
+        [
+            "chrome.exe",
+            "Chromium (dev)"
+        ]
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/henrypp/chromium/releases/download/v66.0.3326.0-r530613-win64/chromium-nosync.zip",
+            "hash": "b6da01ac782215a36dd74f8a681a3523b1264a4a4d799fa29614bced7843673d"
+        },
+        "32bit": {
+            "url": "https://github.com/henrypp/chromium/releases/download/v66.0.3326.0-r530613-win32/chromium-nosync.zip",
+            "hash": "0bab15fc87f0cda40230636a35bdc538336fa97c4b16fb6981078a5823d96878"
+        }
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/henrypp/chromium/releases/download/v$version-win64/chromium-nosync.zip"
+            },
+            "32bit": {
+                "url": "https://github.com/henrypp/chromium/releases/download/v$version-win32/chromium-nosync.zip"
+            }
+        }
+    }
+}

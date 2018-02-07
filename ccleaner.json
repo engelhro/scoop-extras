@@ -1,0 +1,40 @@
+{
+    "homepage": "https://www.piriform.com/ccleaner",
+    "version": "5.39.6399",
+    "url": "https://www.piriform.com/ccleaner/download/portable/downloadfile#/dl.7z",
+    "hash": "f7215379adc09e8c05ba3c26ee0dcdc0f928e715cb80270d21b494a6b8d88bca",
+    "architecture": {
+        "64bit": {
+            "bin": [
+                [
+                    "CCleaner64.exe",
+                    "CCleaner"
+                ]
+            ],
+            "shortcuts": [
+                [
+                    "CCleaner64.exe",
+                    "CCleaner"
+                ]
+            ]
+        },
+        "32bit": {
+            "bin": [
+                "CCleaner.exe"
+            ],
+            "shortcuts": [
+                [
+                    "CCleaner.exe",
+                    "CCleaner"
+                ]
+            ]
+        }
+    },
+    "checkver": {
+        "url": "https://www.piriform.com/ccleaner/download",
+        "re": "<strong>v([\\d.]+)</strong>"
+    },
+    "autoupdate": {
+        "url": "https://www.piriform.com/ccleaner/download/portable/downloadfile#/dl.7z"
+    }
+}

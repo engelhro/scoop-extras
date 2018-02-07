@@ -1,22 +1,52 @@
 {
-	"homepage": "https://www.mozilla.org/en-US/firefox/new/",
-	"version": "2041.0.2",
-	"url": [
-		"https://download-installer.cdn.mozilla.net/pub/firefox/releases/41.0.2/win32/en-US/Firefox%20Setup%2041.0.2.exe",
-		"https://raw.githubusercontent.com/vidarkongsli/vidars-scoop-bucket/b46855351d103b83e2dca41e1965604b2f4dc740/firefox/installer.ps1",
-		"https://raw.githubusercontent.com/vidarkongsli/vidars-scoop-bucket/master/firefox/template.ini"
-		],
-	"hash": [
-		"067d957c2561f197d8d1942fa58e84cdf1909599d3c01c271bdac0e9023c9054",
-		"bcb298c058b8af33292ee5c9b1e6a7f71b95f40695f0ab433c8a2b9c1ad95882",
-		"B146FD0DBA4AB90D2BC6A3672153A3AB78F6878D0D8B5F0FE12EC0EFA70BA225"
-		],
-	"bin": "firefox.exe",
-	"installer": {
-		"file" : "installer.ps1"
-		},
-	"uninstaller": {
-	    "file": "uninstall\\helper.exe",
-	    		"args": "-ms"
-	  	}
+    "homepage": "https://www.mozilla.org/en-US/firefox/new/",
+    "version": "58.0.1",
+    "architecture": {
+        "64bit": {
+            "url": "https://download.mozilla.org/?product=firefox-58.0.1-SSL&os=win64&lang=en-US#/firefox-setup.exe",
+            "hash": "7564b1eb28b7caf34bdf0166e92857452f6e357b851bd4d76f62ecdca3a65ac1"
+        },
+        "32bit": {
+            "url": "https://download.mozilla.org/?product=firefox-58.0.1-SSL&os=win&lang=en-US#/firefox-setup.exe",
+            "hash": "82eed6cda975e7923efc957e684a626a99b64d5e4c0d25f11d16ee9dd40fbdad"
+        }
+    },
+    "bin": "firefox.exe",
+    "shortcuts": [
+        [
+            "firefox.exe",
+            "Mozilla Firefox"
+        ]
+    ],
+    "pre_install": "echo \"[Install]`nInstallDirectoryPath=$dir`nQuickLaunchShortcut=false`nDesktopShortcut=false`nStartMenuShortcuts=false\" | sc \"$dir\\install.ini\"",
+    "installer": {
+        "file": "firefox-setup.exe",
+        "args": "/INI=$dir\\install.ini"
+    },
+    "uninstaller": {
+        "file": "uninstall\\helper.exe",
+        "args": "/S"
+    },
+    "checkver": {
+        "url": "https://www.mozilla.org/en-US/firefox/all/",
+        "re": "data-latest-firefox=\"([\\d.]+)\""
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://download.mozilla.org/?product=firefox-$version-SSL&os=win64&lang=en-US#/firefox-setup.exe",
+                "hash": {
+                    "find": "([a-fA-F0-9]{64})\\s+(?:win64/en-US/Firefox Setup ([\\d.]+).exe)",
+                    "url": "https://download-installer.cdn.mozilla.net/pub/firefox/releases/$version/SHA256SUMS"
+                }
+            },
+            "32bit": {
+                "url": "https://download.mozilla.org/?product=firefox-$version-SSL&os=win&lang=en-US#/firefox-setup.exe",
+                "hash": {
+                    "find": "([a-fA-F0-9]{64})\\s+(?:win32/en-US/Firefox Setup ([\\d.]+).exe)",
+                    "url": "https://download-installer.cdn.mozilla.net/pub/firefox/releases/$version/SHA256SUMS"
+                }
+            }
+        }
+    }
 }

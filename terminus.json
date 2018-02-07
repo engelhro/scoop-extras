@@ -1,0 +1,25 @@
+{
+    "homepage": "https://eugeny.github.io/terminus/",
+    "version": "1.0.0-alpha.39",
+    "license": "MIT",
+    "url": "https://github.com/Eugeny/terminus/releases/download/v1.0.0-alpha.39/terminus-1.0.0-alpha39-full.nupkg#/dl.7z",
+    "hash": "sha1:E1931FD6B99C5FD792B6D2C4129FB4FD0991CF9D",
+    "extract_dir": "lib\\net45",
+    "bin": "Terminus.exe",
+    "shortcuts": [
+        [
+            "Terminus.exe",
+            "Terminus"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/Eugeny/terminus",
+        "re": "/releases/tag/(?:v)?(?<version>(?<short>[\\d.]+)(?<alpha>-\\w+).(?<build>\\d+))?"
+    },
+    "autoupdate": {
+        "url": "https://github.com/Eugeny/terminus/releases/download/v$version/terminus-$matchShort$matchAlpha$matchBuild-full.nupkg#/dl.7z",
+        "hash": {
+            "url": "$baseurl/RELEASES"
+        }
+    }
+}

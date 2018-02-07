@@ -1,0 +1,46 @@
+{
+    "homepage": "https://www.getpostman.com/",
+    "version": "5.5.2",
+    "license": "Commercial",
+    "architecture": {
+        "64bit": {
+            "url": "https://dl.pstmn.io/download/5.5.2/Postman-win64-5.5.2-full.nupkg#/dl.7z",
+            "hash": "sha1:EDF216467C2CF14D2863B9252FF2B282733F0119"
+        },
+        "32bit": {
+            "url": "https://dl.pstmn.io/download/5.5.2/Postman-win32-5.5.2-full.nupkg#/dl.7z",
+            "hash": "sha1:7B9EAC425DE2907BA9AD359D3652BD2CAFBF4E01"
+        }
+    },
+    "extract_dir": "lib\\net45",
+    "bin": "Postman.exe",
+    "shortcuts": [
+        [
+            "Postman.exe",
+            "Postman"
+        ]
+    ],
+    "checkver": {
+        "url": "https://dl.pstmn.io/RELEASES?platform=win64",
+        "re": "Postman-win64-([\\d.]+)-full.nupkg",
+        "reverse": true
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://dl.pstmn.io/download/$version/Postman-win64-$version-full.nupkg#/dl.7z",
+                "hash": {
+                    "url": "https://dl.pstmn.io/RELEASES?platform=win64",
+                    "jp": "$.releases[*].files[?(@.name=='$basename')].hash"
+                }
+            },
+            "32bit": {
+                "url": "https://dl.pstmn.io/download/$version/Postman-win32-$version-full.nupkg#/dl.7z",
+                "hash": {
+                    "url": "https://dl.pstmn.io/RELEASES?platform=win32",
+                    "jp": "$.releases[*].files[?(@.name=='$basename')].hash"
+                }
+            }
+        }
+    }
+}

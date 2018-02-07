@@ -1,7 +1,17 @@
 {
-  "version": "11.0.3",
-  "homepage": "http://www.jetbrains.com/webstorm/",
-  "url": "https://download.jetbrains.com/webstorm/WebStorm-11.0.3.exe#/dl.7z",
-  "hash": "678888c8e4cce921a88bcdb16db4bdc784196983b3147e854a759102ad14b037",
-  "bin": "bin\\WebStorm.exe"
+    "version": "2017.3.4",
+    "homepage": "https://www.jetbrains.com/webstorm/",
+    "url": "https://download.jetbrains.com/webstorm/WebStorm-2017.3.4.exe#/dl.7z",
+    "hash": "698eb510aa67b9d750f2ae29322ef0e07f92e745f65e4cd750bc07d7117d4c5d",
+    "bin": "bin\\WebStorm.exe",
+    "checkver": {
+        "url": "https://data.services.jetbrains.com/products/releases?code=WS&latest=true&type=release",
+        "jp": "$..version"
+    },
+    "autoupdate": {
+        "url": "https://download.jetbrains.com/webstorm/WebStorm-$version.exe#/dl.7z",
+        "hash": {
+            "url": "https://download.jetbrains.com/webstorm/WebStorm-$version.exe.sha256"
+        }
+    }
 }

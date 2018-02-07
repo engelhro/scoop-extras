@@ -1,0 +1,39 @@
+{
+    "homepage": "https://filezilla-project.org/",
+    "version": "3.30.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://sourceforge.net/projects/filezilla/files/FileZilla_Client/3.30.0/FileZilla_3.30.0_win64.zip",
+            "hash": "sha1:473144a2d363970d04b50b5ec7ea068db27db217"
+        },
+        "32bit": {
+            "url": "https://sourceforge.net/projects/filezilla/files/FileZilla_Client/3.30.0/FileZilla_3.30.0_win32.zip",
+            "hash": "sha1:eecf8e47e3663be88b1c7ec74224e2ed7aff7779"
+        }
+    },
+    "extract_dir": "FileZilla-3.30.0",
+    "bin": [
+        "filezilla.exe"
+    ],
+    "shortcuts": [
+        [
+            "filezilla.exe",
+            "FileZilla"
+        ]
+    ],
+    "checkver": {
+        "url": "https://sourceforge.net/projects/filezilla/rss?path=/FileZilla_Client/",
+        "re": "FileZilla_Client/([\\d.]+)/FileZilla_[\\d.]+_win[\\d]{2}\\.zip"
+    },
+    "autoupdate": {
+        "extract_dir": "FileZilla-$version",
+        "architecture": {
+            "64bit": {
+                "url": "https://sourceforge.net/projects/filezilla/files/FileZilla_Client/$version/FileZilla_$version_win64.zip"
+            },
+            "32bit": {
+                "url": "https://sourceforge.net/projects/filezilla/files/FileZilla_Client/$version/FileZilla_$version_win32.zip"
+            }
+        }
+    }
+}

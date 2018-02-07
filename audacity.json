@@ -1,0 +1,24 @@
+{
+    "homepage": "https://www.audacityteam.org/",
+    "version": "2.2.1",
+    "url": "https://fossies.org/windows/misc/audacity-win-2.2.1.zip",
+    "hash": "7247fd40a0b5627dc1e9ac7a91d3c72cc1922162181a3d6e4fea787102e692b4",
+    "bin": "audacity.exe",
+    "shortcuts": [
+        [
+            "audacity.exe",
+            "Audacity"
+        ]
+    ],
+    "checkver": {
+        "url": "https://fossies.org/windows/misc/",
+        "re": "<B>audacity-win-([\\d.]+).zip</B>"
+    },
+    "autoupdate": {
+        "url": "https://fossies.org/windows/misc/audacity-win-$version.zip",
+        "hash": {
+            "url": "$url/",
+            "find": "SHA256 \\($basename\\):\\s+([a-fA-F0-9]{64})"
+        }
+    }
+}

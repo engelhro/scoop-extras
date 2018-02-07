@@ -1,0 +1,27 @@
+{
+    "version": "0.7.0",
+    "license": "BSD",
+    "url": "https://github.com/nteract/nteract/releases/download/v0.7.0/nteract-0.7.0-win.zip#/dl.7z",
+    "homepage": "https://nteract.io/",
+    "hash": "20e3f903611a2980deff412fa1fd8aa261e62b5fecd560e1aec7a3cd360ef877",
+    "bin": "nteract.exe",
+    "depends": "python",
+    "post_install": "
+        Write-Host 'Installing Python3 kernel...' -Foreground Magenta
+        python3 -m pip install ipykernel
+        python3 -m ipykernel install --user
+    ",
+    "checkver": {
+        "github": "https://github.com/nteract/nteract"
+    },
+    "autoupdate": {
+        "url": "https://github.com/nteract/nteract/releases/download/v$version/nteract-$version-win.zip#/dl.7z"
+    },
+    "shortcuts": [
+        [
+            "nteract.exe",
+            "nteract"
+        ]
+    ],
+    "notes": "Instructions for downloading more kernels can be found at: https://nteract.io/kernels"
+}

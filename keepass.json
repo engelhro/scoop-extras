@@ -1,7 +1,23 @@
 {
-	"homepage": "http://keepass.info/",
-	"version": "2.31.0",
-	"url": "http://netcologne.dl.sourceforge.net/project/keepass/KeePass%202.x/2.31/KeePass-2.31.zip"
-	"hash": "1dc0c97de7d3c5efb37eb593d90b1f682d35eecb3442d768b03c3c403acc64a8",
-	"bin": "KeePass.exe"
+    "homepage": "https://keepass.info/",
+    "version": "2.38",
+    "url": "https://sourceforge.net/projects/keepass/files/KeePass%202.x/2.38/KeePass-2.38.zip",
+    "hash": "sha1:2a9c94589647e3b0dc46c6e7e33006dc9ccb17c3",
+    "bin": "KeePass.exe",
+    "shortcuts": [
+        [
+            "KeePass.exe",
+            "KeePass"
+        ]
+    ],
+    "persist": [
+        "Plugins"
+    ],
+    "checkver": {
+        "url": "https://keepass.info/update/version2x.txt",
+        "re": "KeePass:([\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://sourceforge.net/projects/keepass/files/KeePass%20$majorVersion.x/$version/KeePass-$version.zip"
+    }
 }

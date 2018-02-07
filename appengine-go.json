@@ -1,36 +1,59 @@
 {
-	"homepage": "https://developers.google.com/appengine/",
-	"version": "1.8.3",
-	"architecture": {
-		"64bit": {
-			"url": [
-				"http://googleappengine.googlecode.com/files/go_appengine_sdk_windows_amd64-1.8.3.zip",
-				"https://raw.github.com/lukesampson/scoop-extras/master/scripts/pyshim.ps1"
-			],
-			"hash": [ "sha1:4de3856ca5ff1318d7c58ea399f8fa25a3ced885" ]
-		},
-		"32bit": {
-			"url": [
-				"http://googleappengine.googlecode.com/files/go_appengine_sdk_windows_386-1.8.3.zip",
-				"https://raw.github.com/lukesampson/scoop-extras/master/scripts/pyshim.ps1"
-			],
-			"hash": [ "sha1:aeba549840f3ea81da892279b8039463826915e8" ]
-		}
-	},
-	"extract_dir": "go_appengine",
-	"installer": {
-		"_comment": "pyshim creates a .ps1 script for each .py file",
-		"file": "pyshim.ps1",
-		"args": [ "$dir" ]
-	},
-	"bin": [
-		"api_server.ps1",
-		"appcfg.ps1",
-		"backends_conversion.ps1",
-		"bulkloader.ps1",
-		"bulkload_client.ps1",
-		"dev_appserver.ps1",
-		"download_appstats.ps1",
-		"endpointscfg.ps1"
-	]
+    "homepage": "https://developers.google.com/appengine/",
+    "version": "1.9.62",
+    "architecture": {
+        "64bit": {
+            "url": [
+                "https://storage.googleapis.com/appengine-sdks/featured/go_appengine_sdk_windows_amd64-1.9.62.zip",
+                "https://raw.github.com/lukesampson/scoop-extras/master/scripts/pyshim.ps1"
+            ],
+            "hash": [
+                "f0d0cac8c877bbeebddccf0d372b37938d2a741ccf8e6dcbb911aa599977ca25"
+            ]
+        },
+        "32bit": {
+            "url": [
+                "https://storage.googleapis.com/appengine-sdks/featured/go_appengine_sdk_windows_386-1.9.62.zip",
+                "https://raw.github.com/lukesampson/scoop-extras/master/scripts/pyshim.ps1"
+            ],
+            "hash": [
+                "b6aaad4b8df5a28815619ed0e240d0ab1a9e2199ebc7bcfa4f805351148e0e8a"
+            ]
+        }
+    },
+    "extract_dir": "go_appengine",
+    "checkver": {
+        "url": "https://cloud.google.com/appengine/docs/standard/go/download",
+        "re": "go_appengine_sdk_windows_amd64-([\\d.]+).zip"
+    },
+    "installer": {
+        "_comment": "pyshim creates a .ps1 script for each .py file",
+        "file": "pyshim.ps1",
+        "args": [
+            "$dir"
+        ]
+    },
+    "bin": [
+        "appcfg.ps1",
+        "backends_conversion.ps1",
+        "bulkloader.ps1",
+        "bulkload_client.ps1",
+        "dev_appserver.ps1",
+        "download_appstats.ps1",
+        "endpointscfg.ps1",
+        "php_cli.ps1",
+        "run_tests.ps1",
+        "wrapper_util.ps1"
+    ],
+    "notes": "appengine-go depends on either python or python27 being installed.",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://storage.googleapis.com/appengine-sdks/featured/go_appengine_sdk_windows_amd64-$version.zip"
+            },
+            "32bit": {
+                "url": "https://storage.googleapis.com/appengine-sdks/featured/go_appengine_sdk_windows_386-$version.zip"
+            }
+        }
+    }
 }

@@ -1,0 +1,17 @@
+{
+    "description": "Microsoft Azure CLI 2.0",
+    "homepage": "https://aka.ms/cli",
+    "version": "2.0.26",
+    "license": "https://raw.githubusercontent.com/Azure/azure-cli/master/LICENSE.txt",
+    "url": "https://azurecliprod.blob.core.windows.net/msi/azure-cli-2.0.26.msi",
+    "hash": "041f510b9d3792f26ae952961ca164d3da74f6107d920d98e4ba665548da22d4",
+    "extract_dir": "Microsoft SDKs/Azure/CLI2",
+    "bin": "wbin/az.cmd",
+    "checkver": {
+        "url": "https://api.github.com/repos/Azure/azure-cli/releases",
+        "re": "azure-cli-([\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://azurecliprod.blob.core.windows.net/msi/azure-cli-$version.msi"
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "homepage": "https://github.com/zarunbal/LogExpert",
+    "version": "1.6.7",
+    "license": "MIT",
+    "url": "https://github.com/zarunbal/LogExpert/releases/download/v1.6.7/LogExpert-1.6.7.zip",
+    "hash": "50cfd656af7641bf6133d4484db19183ea509c9194c8cf96981f438561047239",
+    "extract_dir": "LogExpert-1.6.7/LogExpert",
+    "bin": "LogExpert.exe",
+    "shortcuts": [
+        [
+            "LogExpert.exe",
+            "LogExpert"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/zarunbal/LogExpert"
+    },
+    "autoupdate": {
+        "url": "https://github.com/zarunbal/LogExpert/releases/download/v$version/LogExpert-$version.zip",
+        "extract_dir": "LogExpert-$version/LogExpert"
+    }
+}

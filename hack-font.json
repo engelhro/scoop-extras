@@ -1,0 +1,32 @@
+{
+    "version": "1.5.2",
+    "license": "MIT",
+    "url": "https://github.com/source-foundry/Hack-windows-installer/releases/download/v1.5.2/HackWindowsInstaller.exe",
+    "homepage": "https://sourcefoundry.org/hack/",
+    "checkver": {
+        "github": "https://github.com/source-foundry/Hack-windows-installer"
+    },
+    "autoupdate": {
+        "url": "https://github.com/source-foundry/Hack-windows-installer/releases/download/v$version/HackWindowsInstaller.exe"
+    },
+    "hash": "2963d5ad42193fecfc5bb8b5d3b7032d296a6b1d24c75cc79ec6886bda949e34",
+    "installer": {
+        "file": "HackWindowsInstaller.exe",
+        "args": [
+            "/VERYSILENT",
+            "/DIR=\"$dir\"",
+            "/SUPPRESSMSGBOXES",
+            "/NORESTART",
+            "/CLOSEAPPLICATIONS",
+            "/NORESTARTAPPLICATIONS"
+        ]
+    },
+    "uninstaller": {
+        "file": "unins000.exe",
+        "args": [
+            "/VERYSILENT",
+            "/SUPPRESSMSGBOXES",
+            "/NORESTART"
+        ]
+    }
+}

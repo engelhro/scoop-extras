@@ -1,0 +1,31 @@
+{
+    "homepage": "https://www.darktable.org/",
+    "license": "GPLv3",
+    "version": "2.4.1",
+    "url": "https://github.com/darktable-org/darktable/releases/download/release-2.4.1/darktable-2.4.1-win64.exe",
+    "hash": "0be1e0dd8dec61a7cea41598c52db258edaee8783c543b4311fa0ac56ab43d2a",
+    "bin": "bin\\darktable.exe",
+    "installer": {
+        "args": [
+            "/S",
+            "/D=$dir"
+        ]
+    },
+    "uninstaller": {
+        "file": "Uninstall.exe",
+        "args": [
+            "/S"
+        ]
+    },
+    "checkver": {
+        "github": "https://github.com/darktable-org/darktable",
+        "re": "tree/release-([\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://github.com/darktable-org/darktable/releases/download/release-$version/darktable-$version-win64.exe",
+        "hash": {
+            "url": "https://github.com/darktable-org/darktable/releases/latest",
+            "find": "([a-fA-F0-9]+)\\s+(?:\\./|\\*)?(?:darktable-[\\w\\d.\\-]+.exe)(\\s[\\d]+)?"
+        }
+    }
+}

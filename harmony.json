@@ -1,0 +1,19 @@
+{
+    "homepage": "https://getharmony.xyz/",
+    "version": "0.8.2",
+    "hash": "7e826d13e979401c3a3abc59408389ed82e0cdb063efcd8cbc203003bc45a72b",
+    "url": "https://github.com/vincelwt/harmony/releases/download/v0.8.2/harmony-0.8.2-setup.exe#/dl.7z",
+    "checkver": {
+        "github": "https://github.com/vincelwt/harmony"
+    },
+    "pre_install": "extract_7zip \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
+    "shortcuts": [
+        [
+            "Harmony.exe",
+            "Harmony"
+        ]
+    ],
+    "autoupdate": {
+        "url": "https://github.com/vincelwt/harmony/releases/download/v$version/harmony-$version-setup.exe#/dl.7z"
+    }
+}

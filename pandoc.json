@@ -1,10 +1,21 @@
 {
-	"homepage": "http://johnmacfarlane.net/pandoc/",
-	"version": "1.15.1.1",
-	"license": "GPL",
-	"depends": "latex",
-	"url": "https://github.com/jgm/pandoc/releases/download/1.15.1.1/pandoc-1.15.1.1-windows.msi",
-	"hash": "ff95ff7314086867629a80324c1f67c8cbb76fb3a9c51ab09eff32d28657d3cf",
-	"extract_dir": "Pandoc",
-	"bin": "pandoc.exe"
+    "homepage": "https://pandoc.org/",
+    "version": "2.1.1",
+    "license": "GPL",
+    "url": "https://github.com/jgm/pandoc/releases/download/2.1.1/pandoc-2.1.1-windows.msi",
+    "hash": "0c0b4ce8e86ca4c66a86bd40faf75b2c03b1b5aaa27b4d369e2b3dec111c5210",
+    "extract_dir": "Pandoc",
+    "bin": "pandoc.exe",
+    "checkver": {
+        "url": "https://github.com/jgm/pandoc/releases",
+        "re": "pandoc-([^-]+)-windows\\.msi"
+    },
+    "autoupdate": {
+        "url": "https://github.com/jgm/pandoc/releases/download/$version/pandoc-$version-windows.msi"
+    },
+    "suggest": {
+        "MiKTeX": [
+            "latex"
+        ]
+    }
 }

@@ -1,13 +1,15 @@
 {
-  "version": "1.13.2",
-  "license": "BSD",
-  "homepage": "https://www.dartlang.org/",
-  "extract_dir": "dartium-win-full-stable-1.13.2.0",
-  "bin": [ [ "chrome.exe", "dartium", "" ] ],
-  "url": "https://storage.googleapis.com/dart-archive/channels/stable/release/1.13.2/dartium/dartium-windows-ia32-release.zip",
-  "hash": "eba256c304dae3949186cdb972ed8316f1cc1923333427b4e3a483b64bb21549",
-  "checkver": {
-    "url": "http://storage.googleapis.com/dart-archive/channels/stable/release/latest/VERSION",
-    "re": "\\s*\"version\"\\s*:\\s*(\\d+\\.\\d+\\.\\d+.*)"
-  }
+    "version": "1.24.2",
+    "license": "BSD",
+    "homepage": "https://www.dartlang.org/",
+    "extract_dir": "dartium-win-ia32-stable-1.24.2.0",
+    "bin": [
+        [
+            "chrome.exe",
+            "dartium",
+            ""
+        ]
+    ],
+    "url": "https://storage.googleapis.com/dart-archive/channels/stable/release/1.24.2/dartium/dartium-windows-ia32-release.zip",
+    "hash": "0c08f8e8e2b0a2414c6d49fb65eabf48274c03e01d3fd526ee0e3edfe0daf062"
 }

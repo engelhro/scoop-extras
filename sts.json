@@ -1,0 +1,40 @@
+{
+    "homepage": "https://spring.io/tools/sts",
+    "version": "3.9.2",
+    "architecture": {
+        "64bit": {
+            "url": "http://download.springsource.com/release/STS/3.9.2.RELEASE/dist/e4.7/spring-tool-suite-3.9.2.RELEASE-e4.7.2-win32-x86_64.zip",
+            "hash": "sha1:3c2dd5ef05551c5fae550e6a32e270f4864c3883"
+        },
+        "32bit": {
+            "url": "http://download.springsource.com/release/STS/3.9.2.RELEASE/dist/e4.7/spring-tool-suite-3.9.2.RELEASE-e4.7.2-win32.zip",
+            "hash": "sha1:74c810ddd8ea915ef450b6e2dce64dab27935130"
+        }
+    },
+    "extract_dir": "sts-bundle",
+    "pre_install": "mv \"$dir\\sts-$version.RELEASE\" \"$dir\\sts\"",
+    "shortcuts": [
+        [
+            "sts\\STS.exe",
+            "Spring Tool Suite"
+        ]
+    ],
+    "bin": "sts\\STS.exe",
+    "checkver": {
+        "url": "https://spring.io/tools/sts/all",
+        "re": "spring-tool-suite-(?<version>[\\d.]+).RELEASE-e(?<eclipse>(?<short>[\\d.]+).[\\d]+\\w?)-win32.zip"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "http://download.springsource.com/release/STS/$matchVersion.RELEASE/dist/e$matchShort/spring-tool-suite-$version.RELEASE-e$matchEclipse-win32-x86_64.zip"
+            },
+            "32bit": {
+                "url": "http://download.springsource.com/release/STS/$matchVersion.RELEASE/dist/e$matchShort/spring-tool-suite-$version.RELEASE-e$matchEclipse-win32.zip"
+            }
+        },
+        "hash": {
+            "url": "$url.sha1"
+        }
+    }
+}

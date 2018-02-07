@@ -1,0 +1,29 @@
+{
+    "homepage": "https://calibre-ebook.com/",
+    "version": "3.16.0",
+    "license": "GNU General Public License v3.0",
+    "url": "https://github.com/kovidgoyal/calibre/releases/download/v3.16.0/calibre-portable-installer-3.16.0.exe#/calibre-portable-installer.exe",
+    "hash": "be5a27bbf11e17aa9c97118b5f2a2ad794d465bc9b0b93fdf4b9687c2d207f29",
+    "persist": [
+        "Calibre Portable\\Calibre Library",
+        "Calibre Portable\\Calibre Settings"
+    ],
+    "installer": {
+        "file": "calibre-portable-installer.exe",
+        "args": [
+            "$dir"
+        ]
+    },
+    "shortcuts": [
+        [
+            "Calibre Portable\\calibre-portable.exe",
+            "Calibre"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/kovidgoyal/calibre"
+    },
+    "autoupdate": {
+        "url": "https://github.com/kovidgoyal/calibre/releases/download/v$version/calibre-portable-installer-$version.exe#/calibre-portable-installer.exe"
+    }
+}

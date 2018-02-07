@@ -1,0 +1,43 @@
+{
+    "version": "20.0.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://mkvtoolnix.download/windows/releases/20.0.0/mkvtoolnix-64-bit-20.0.0.7z",
+            "hash": "sha512:4bea189325c8c6cc1b1dc2273c2bf2cb20c4bc33f57f6c872294a953c720e0de0a2ccff9dba3b775def96c61f25c0edd3349150efc53d30098fcf74f9c5d5a05"
+        },
+        "32bit": {
+            "url": "https://mkvtoolnix.download/windows/releases/20.0.0/mkvtoolnix-32-bit-20.0.0.7z",
+            "hash": "sha512:61cf340420a59fe7e7b1006639c867e47f473a2eaf1007399e2cdc93991af0b4d9996fd883f9e601e568f7c1f53d1c65ff35ced93ccdc7f22c16777e68818284"
+        }
+    },
+    "homepage": "https://mkvtoolnix.download/",
+    "extract_dir": "mkvtoolnix",
+    "bin": [
+        "mkvextract.exe",
+        "mkvinfo-gui.exe",
+        "mkvinfo.exe",
+        "mkvmerge.exe",
+        "mkvpropedit.exe",
+        "mkvtoolnix-gui.exe"
+    ],
+    "shortcuts": [
+        [
+            "mkvtoolnix-gui.exe",
+            "MKVToolNix GUI"
+        ]
+    ],
+    "checkver": "Released v([\\d.]+)",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://mkvtoolnix.download/windows/releases/$version/mkvtoolnix-64-bit-$version.7z"
+            },
+            "32bit": {
+                "url": "https://mkvtoolnix.download/windows/releases/$version/mkvtoolnix-32-bit-$version.7z"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/sha512sums.txt"
+        }
+    }
+}

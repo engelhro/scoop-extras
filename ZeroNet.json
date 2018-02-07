@@ -1,0 +1,25 @@
+{
+    "version": "0.6.1",
+    "license": "GPLv2",
+    "extract_dir": "ZeroNet-win-dist",
+    "url": "https://github.com/HelloZeroNet/ZeroNet-win/archive/dist/ZeroNet-win.zip",
+    "homepage": "https://zeronet.io/",
+    "hash": "89f9df88a133227b2b9555307f1be517f320a56287bcd0e12b428a583f210d53",
+    "bin": "ZeroNet.exe",
+    "persist": [
+        "data",
+        "log"
+    ],
+    "shortcuts": [
+        [
+            "ZeroNet.exe",
+            "ZeroNet"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/HelloZeroNet/ZeroNet"
+    },
+    "autoupdate": {
+        "url": "https://github.com/HelloZeroNet/ZeroNet-win/archive/dist/ZeroNet-win.zip"
+    }
+}

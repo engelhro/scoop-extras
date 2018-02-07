@@ -1,17 +1,43 @@
 {
-	"homepage": "http://www.videolan.org/",
-	"version": "2.2.1",
-	"license": "GPL",
-	"architecture": {
-		"64bit": {
-			"url": "http://get.videolan.org/vlc/2.2.1/win64/vlc-2.2.1-win64.zip",
-			"hash": "78c7240487593e9b8e93b3271480245443355df88a615ce2dac5d52d7fd1b119"
-		},
-		"32bit": {
-			"url": "http://get.videolan.org/vlc/2.2.1/win32/vlc-2.2.1-win32.zip",
-			"hash": "501e3aafd46c2aadd6822a2764e00159ef06fdf98ae56f90dec049e61be1bd67"
-		}
-	},
-	"extract_dir": "vlc-2.2.1",
-	"bin": "vlc.exe"
+    "homepage": "https://www.videolan.org/",
+    "version": "2.2.8",
+    "license": "GPL",
+    "bin": "vlc.exe",
+    "shortcuts": [
+        [
+            "vlc.exe",
+            "VLC media player"
+        ]
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://download.videolan.org/pub/vlc/2.2.8/win64/vlc-2.2.8-win64.7z",
+            "hash": "05c8cd8612f97d89e206563949d5f904dd2e9d51eb5d8658146d128be6c7df2e",
+            "extract_dir": "vlc-2.2.8"
+        },
+        "32bit": {
+            "url": "https://download.videolan.org/pub/vlc/2.2.8/win32/vlc-2.2.8-win32.7z",
+            "hash": "41daa0904c8e79f58047daf5f9fcc182916680acb330f46443f8957933a76f04",
+            "extract_dir": "vlc-2.2.8"
+        }
+    },
+    "checkver": {
+        "url": "https://www.videolan.org/vlc/download-windows.html",
+        "re": "\\s+([\\d.]+)</span>"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://download.videolan.org/pub/vlc/$version/win64/vlc-$version-win64.7z",
+                "extract_dir": "vlc-$version"
+            },
+            "32bit": {
+                "url": "https://download.videolan.org/pub/vlc/$version/win32/vlc-$version-win32.7z",
+                "extract_dir": "vlc-$version"
+            }
+        },
+        "hash": {
+            "url": "$url.sha256"
+        }
+    }
 }
